@@ -6,10 +6,9 @@ FROM ${BUILD_FROM}
 ENV TERM="xterm-256color"
 
 # Setup base
-ARG BUILD_ARCH
 # hadolint ignore=DL3003
 RUN \
-    && apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache --virtual .build-dependencies \
         alsa-lib-dev=1.1.6-r0 \
         build-base=0.5-r1 \
         cargo=1.26.2-r0 \
@@ -34,6 +33,7 @@ RUN \
 COPY rootfs /
 
 # Build arugments
+ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
