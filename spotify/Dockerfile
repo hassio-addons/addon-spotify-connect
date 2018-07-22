@@ -11,7 +11,7 @@ RUN \
         cargo \
         git \
         libasound2-dev \
-        lubasound2 \
+        libasound2 \
         libssl-dev \
         rustc \
         build-essential \
