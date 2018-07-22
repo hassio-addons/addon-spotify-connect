@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Spotify Connect
+# Runs spotifyd
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+hass.log.info 'Starting the Spotify daemon'
+
+# Run spotifyd
+exec sleep 9000
