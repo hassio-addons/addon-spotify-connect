@@ -6,7 +6,17 @@
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
+declare -a options
+
 hass.log.info 'Starting the Spotify daemon'
 
+# Run spotifyd in the foreground
+options+=(--no-daemon)
+
+# Are we running in debug mode?
+if hass.debug; then
+  options+=(--verbose)
+fi
+
 # Run spotifyd
-exec sleep 9000
+exec spotifyd "${options[@]}"
