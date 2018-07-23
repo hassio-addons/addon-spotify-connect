@@ -14,21 +14,33 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-Lorem ipsum.
+Play Spotify music via your Home Assistant device.
 
-![The Spotify Connect Hass.io add-on](images/screenshot.jpg)
+![The Spotify Connect Hass.io add-on](images/screenshot.png)
 
 ## About
 
-Lorem ipsum
+The Hass.io Spotify Connect add-on allows you to use your device running
+Home Assistant to play your Spotify music. This add-on uses the Spotify
+Connect protocol, which makes it show up a device that can be controlled
+by all the official clients.
+
+For example; Running Hass.io on a Raspberry Pi with this add-on installed
+will allow you to play your Spotify music via the Pi. So all you'll have
+to do is hook up your sound system to the Pi!
 
 ## Installation
+
+**IMPORTANT**: _This add-on requires a Spotify Premium account!_
 
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install the "Spotify Connect" add-on.
+1. Put in your Spotify account details into the `username`/`password` options.
+1. Click the `Save` button to store your credentials.
+1. Select your audio output device and hit `Save` on that as well.
 1. Start the "Spotify Connect" add-on.
 1. Check the logs of the "Spotify Connect" to see if everything went well.
 1. Ready to go!
@@ -54,7 +66,11 @@ Example add-on configuration:
 
 ```json
 {
-    "log_level": "info"
+  "log_level": "info",
+  "username": "frenck@example.com",
+  "password": "MySpotifyPassword",
+  "name": "Hass.io",
+  "bitrate": 320
 }
 ```
 
@@ -78,9 +94,34 @@ more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
+Setting the `log_level` to `debug` will also turn on debug mode on the
+Spotify service.
+
+### Option: `username`
+
+The username you use to login to your Spotify Premium account.
+
+### Option: `password`
+
+The password you use to login to your Spotify Premium account.
+
+### Option: `name`
+
+The name of your device (the Spotify Connect target), as shown on
+the official Spotify clients.
+
+**Note**: _May only contain letters, numbers, hyphens (`-`) and dots (`.`)
+
+### Option: `bitrate`
+
+The bitrate Spotify should use. The higher, the better the sound quality,
+however, the add-on consumes more data.
+
+Valid values: `96`, `160` (default) or `320`.
+
 ## Known issues and limitations
 
-- Lorem ipsum
+- This add-on requires a Spotify Premium account.
 
 ## Changelog & Releases
 
