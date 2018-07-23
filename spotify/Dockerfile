@@ -50,12 +50,12 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="Spotify Connect" \
-    io.hass.description="Lorem ipsum" \
+    io.hass.description="Play Spotify music via your Home Assistant device." \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Lorem ipsum" \
+    org.label-schema.description="Play Spotify music via your Home Assistant device." \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Spotify Connect" \
     org.label-schema.schema-version="1.0" \
