@@ -33,7 +33,8 @@ RUN \
         build-essential \
         pkg-config \
     \
-    && rm -f -r /tmp/* \
+    && rm -rf /tmp/* \
+    && rm -rf /root/.cargo \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/* \
     && rm -rf /var/{cache,log}/*/*
