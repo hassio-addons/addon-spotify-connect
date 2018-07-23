@@ -1,23 +1,21 @@
-ARG BUILD_FROM=hassioaddons/base:2.0.1
+ARG BUILD_FROM=hassioaddons/ubuntu-base-amd64:2.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-# Add env
-ENV TERM="xterm-256color"
-
 # Setup base
-# hadolint ignore=DL3003
+# hadolint ignore=DL3003,DL3008,SC2039
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
-        alsa-lib-dev=1.1.6-r0 \
-        build-base=0.5-r1 \
-        cargo=1.26.2-r0 \
-        rust=1.26.2-r0 \
-        git=2.18.0-r0 \
-        libressl-dev=2.7.4-r0 \
+    apt-get update \
     \
-    && apk add --no-cache \
-        alsa-lib=1.1.6-r0 \
+    && apt-get install -y --no-install-recommends \
+        cargo \
+        git \
+        libasound2-dev \
+        libasound2 \
+        libssl-dev \
+        rustc \
+        build-essential \
+        pkg-config \
     \
     && git clone --branch "v0.2.2" --depth=1 \
         https://github.com/Spotifyd/spotifyd.git /tmp/spotifyd \
@@ -26,8 +24,19 @@ RUN \
     && cargo build --release \
     && mv /tmp/spotifyd/target/release/spotifyd /usr/bin \
     \
+    && apt-get purge -y --auto-remove \
+        cargo \
+        git \
+        libasound2-dev \
+        libssl-dev \
+        rustc \
+        build-essential \
+        pkg-config \
+    \
     && rm -f -r /tmp/* \
-    && apk del --purge .build-dependencies
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/* \
+    && rm -rf /var/{cache,log}/*/*
 
 # Copy root filesystem
 COPY rootfs /
