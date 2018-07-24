@@ -14,20 +14,20 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-Play Spotify music via your Home Assistant device.
+Play Spotify music on your Home Assistant device.
 
 ![The Spotify Connect Hass.io add-on](images/screenshot.png)
 
 ## About
 
-The Hass.io Spotify Connect add-on allows you to use your device running
-Home Assistant to play your Spotify music. This add-on uses the Spotify
-Connect protocol, which makes it show up a device that can be controlled
+The Hass.io Spotify Connect add-on allows you to use your device, running
+Home Assistant, to play your Spotify music. This add-on uses the Spotify
+Connect protocol, which makes it a device that can be controlled
 by all the official clients.
 
 For example; Running Hass.io on a Raspberry Pi with this add-on installed
-will allow you to play your Spotify music via the Pi. So all you'll have
-to do is hook up your sound system to the Pi!
+will allow you to play your Spotify music on the Pi. So all you'll have
+to do is hook up your sound system to the Pi and start booming!
 
 ## Installation
 
