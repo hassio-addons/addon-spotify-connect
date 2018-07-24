@@ -215,7 +215,7 @@ SOFTWARE.
 [discord]: https://discord.gg/c5DvZ4e
 [dockerhub]: https://hub.docker.com/r/hassioaddons/spotify
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-spotify-connect/61210?u=frenck
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-spotify-connect/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-spotify-connect/pipelines
