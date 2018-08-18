@@ -6,19 +6,20 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-# hadolint ignore=DL3003,DL3008,SC2039
+# hadolint ignore=DL3003
 RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        cargo \
-        git \
-        libasound2-dev \
-        libasound2 \
-        libssl-dev \
-        rustc \
-        build-essential \
-        pkg-config \
+        build-essential=12.4ubuntu1 \
+        cargo=0.26.0-0ubuntu2 \
+        git=1:2.17.1-1ubuntu0.1 \
+        libasound2-data=1.1.3-5 \
+        libasound2-dev=1.1.3-5 \
+        libasound2=1.1.3-5 \
+        libssl-dev=1.1.0g-2ubuntu4.1 \
+        pkg-config=0.29.1-0ubuntu2 \
+        rustc=1.25.0+dfsg1+llvm-0ubuntu1 \
     \
     && git clone --branch "v0.2.2" --depth=1 \
         https://github.com/Spotifyd/spotifyd.git /tmp/spotifyd \
@@ -28,13 +29,13 @@ RUN \
     && mv /tmp/spotifyd/target/release/spotifyd /usr/bin \
     \
     && apt-get purge -y --auto-remove \
+        build-essential \
         cargo \
         git \
         libasound2-dev \
         libssl-dev \
-        rustc \
-        build-essential \
         pkg-config \
+        rustc \
     \
     && rm -fr \
         /tmp/* \
