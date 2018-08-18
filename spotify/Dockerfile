@@ -36,11 +36,11 @@ RUN \
         build-essential \
         pkg-config \
     \
-    && rm -rf /tmp/* \
-    && rm -rf /root/.cargo \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/* \
-    && rm -rf /var/{cache,log}/*/*
+    && rm -fr \
+        /tmp/* \
+        /root/.cargo \
+        /var/{cache,log}/* \
+        /var/lib/apt/lists/*
 
 # Copy root filesystem
 COPY rootfs /
