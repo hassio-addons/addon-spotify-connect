@@ -103,9 +103,13 @@ Spotify service.
 
 The username you use to login to your Spotify Premium account.
 
+**Note**: _This option support secrets, e.g., `!secret spotify_username`._
+
 ### Option: `password`
 
 The password you use to login to your Spotify Premium account.
+
+**Note**: _This option support secrets, e.g., `!secret spotify_password`._
 
 ### Option: `name`
 
