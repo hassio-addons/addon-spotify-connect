@@ -127,6 +127,8 @@ Valid values: `96`, `160` (default) or `320`.
 
 ## Known issues and limitations
 
+- This add-on does support ARM-based devices, nevertheless, they must
+  at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
 - This add-on requires a Spotify Premium account.
 
 ## Changelog & Releases
