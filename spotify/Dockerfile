@@ -21,7 +21,7 @@ RUN \
         pkg-config=0.29.1-0ubuntu2 \
         rustc=1.25.0+dfsg1+llvm-0ubuntu1 \
     \
-    && git clone --branch "v0.2.2" --depth=1 \
+    && git clone --branch "v0.2.3" --depth=1 \
         https://github.com/Spotifyd/spotifyd.git /tmp/spotifyd \
     \
     && cd /tmp/spotifyd \
