@@ -12,12 +12,12 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         build-essential=12.4ubuntu1 \
-        cargo=0.26.0-0ubuntu2 \
         git=1:2.17.1-1ubuntu0.1 \
         libasound2-data=1.1.3-5 \
         libasound2-dev=1.1.3-5 \
         libasound2=1.1.3-5 \
         libssl-dev=1.1.0g-2ubuntu4.1 \
+        cargo=0.31.0-3ubuntu1~18.04.4 \
         pkg-config=0.29.1-0ubuntu2 \
         rustc=1.25.0+dfsg1+llvm-0ubuntu1 \
     \
