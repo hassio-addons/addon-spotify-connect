@@ -32,8 +32,6 @@ to do is hook up your sound system to the Pi and start booming!
 
 ## Installation
 
-**IMPORTANT**: _This add-on requires a Spotify Premium account!_
-
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
