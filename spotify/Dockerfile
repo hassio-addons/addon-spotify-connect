@@ -14,9 +14,9 @@ RUN \
         build-essential=12.4ubuntu1 \
         cargo=0.31.0-3ubuntu1~18.04.4 \
         git=1:2.17.1-1ubuntu0.4 \
-        libasound2-data=1.1.3-5ubuntu0.1 \
-        libasound2-dev=1.1.3-5ubuntu0.1 \
-        libasound2=1.1.3-5ubuntu0.1 \
+        libasound2-data=1.1.3-5ubuntu0.2 \
+        libasound2-dev=1.1.3-5ubuntu0.2 \
+        libasound2=1.1.3-5ubuntu0.2 \
         libssl-dev=1.1.0g-2ubuntu4.3 \
         pkg-config=0.29.1-0ubuntu2 \
         rustc=1.30.0+dfsg1+llvm-2ubuntu1~18.04.1 \
