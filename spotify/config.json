@@ -21,14 +21,13 @@
   "host_network": false,
   "audio": true,
   "options": {
-    "log_level": "info",
     "username": "",
     "password": "",
     "name": "Hass.io",
     "bitrate": 160
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "username": "str",
     "password": "str",
     "name": "match(^[A-Za-z0-9-.]+$)",
