@@ -12,7 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         build-essential=12.4ubuntu1 \
-        cargo=0.32.0-1~exp1ubuntu1~18.04.1 \
+        cargo=0.33.0-1ubuntu1~18.04.1 \
         git=1:2.17.1-1ubuntu0.4 \
         libasound2-data=1.1.3-5ubuntu0.2 \
         libasound2-dev=1.1.3-5ubuntu0.2 \
