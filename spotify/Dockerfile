@@ -19,7 +19,7 @@ RUN \
         libasound2=1.1.3-5ubuntu0.2 \
         libssl-dev=1.1.1-1ubuntu2.1~18.04.5 \
         pkg-config=0.29.1-0ubuntu2 \
-        rustc=1.36.0+dfsg1+llvm-2ubuntu1~18.04.1 \
+        rustc=1.37.0+dfsg1+llvm-1ubuntu1~18.04.1 \
     \
     && git clone --branch "v0.2.20" --depth=1 \
         https://github.com/Spotifyd/spotifyd.git /tmp/spotifyd \
