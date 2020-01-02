@@ -43,17 +43,14 @@ to do is hook up your sound system to the Pi and start booming!
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "Spotify Connect" add-on.
+1. Search for the "Spotify Connect" add-on in the Hass.io add-on store
+   and install it.
 1. Put in your Spotify account details into the `username`/`password` options.
 1. Click the `Save` button to store your credentials.
 1. Select your audio output device and hit `Save` on that as well.
 1. Start the "Spotify Connect" add-on.
 1. Check the logs of the "Spotify Connect" to see if everything went well.
 1. Ready to go!
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
 
 ## Configuration
 
