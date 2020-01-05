@@ -95,6 +95,9 @@ Spotify service.
 
 The username you use to login to your Spotify Premium account.
 
+When this username is left empty `""`, Spotify Connect will start in
+discovery mode.
+
 **Note**: _This option support secrets, e.g., `!secret spotify_username`._
 
 ### Option: `password`
