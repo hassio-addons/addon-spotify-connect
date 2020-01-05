@@ -8,9 +8,6 @@ declare password
 declare name
 declare bitrate
 
-bashio::config.require.username
-bashio::config.require.password
-
 if ! bashio::config.has_value 'name'; then
     bashio::log.fatal
     bashio::log.fatal "Add-on configuration is incomplete!"
@@ -23,14 +20,19 @@ if ! bashio::config.has_value 'name'; then
     bashio::exit.nok
 fi
 
-username=$(bashio::config 'username')
-password=$(bashio::config 'password')
+if bashio::config.has_value 'username'; then
+    bashio::config.require.password
+    username=$(bashio::config 'username')
+    password=$(bashio::config 'password')
+    {
+        echo "username =${username}"
+        echo "password =${password}"
+    } >> /etc/spotifyd.conf
+fi
+
 name=$(bashio::config 'name')
 bitrate=$(bashio::config 'bitrate')
-
 {
-    echo "username = \"${username}\""
-    echo "password = \"${password}\""
-    echo "device_name = \"${name}\""
-    echo "bitrate = ${bitrate}"
+    echo "device_name =${name}"
+    echo "bitrate =${bitrate}"
 } >> /etc/spotifyd.conf
