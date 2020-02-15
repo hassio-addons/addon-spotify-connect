@@ -58,14 +58,12 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "username": "frenck@example.com",
-  "password": "MySpotifyPassword",
-  "name": "Hass.io",
-  "bitrate": 320
-}
+```yaml
+log_level: info
+username: frenck@example.com
+password: MySpotifyPassword
+name: Hass.io
+bitrate: 320
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
