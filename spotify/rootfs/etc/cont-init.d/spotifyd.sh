@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Spotify Connect
+# Home Assistant Community Add-on: Spotify Connect
 # Sets up the configuration file for spotifyd
 # ==============================================================================
 declare username

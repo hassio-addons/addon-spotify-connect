@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Spotify Connect
+# Home Assistant Community Add-on: Spotify Connect
 # Runs spotifyd
 # ==============================================================================
 declare -a options

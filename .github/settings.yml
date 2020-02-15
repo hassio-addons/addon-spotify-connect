@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Spotify Connect - Community Hass.io Add-on for Home Assistant"
+  description: "Spotify Connect - Home Assistant Community Add-ons"
   homepage: https://addons.community
-  topics: spotify, spotify-connect, spotify-client, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: spotify, spotify-connect, spotify-client, addon, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false
