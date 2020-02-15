@@ -5,15 +5,8 @@
   "description": "Play Spotify music on your Home Assistant device",
   "url": "https://github.com/hassio-addons/addon-spotify-connect",
   "startup": "services",
-  "arch": [
-    "aarch64",
-    "amd64",
-    "armv7",
-    "i386"
-  ],
-  "map": [
-    "config"
-  ],
+  "arch": ["aarch64", "amd64", "armv7", "i386"],
+  "map": ["config"],
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
@@ -25,9 +18,9 @@
     "bitrate": 160
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "username": "str",
-    "password": "str",
+    "password": "password",
     "name": "match(^[A-Za-z0-9-.]+$)",
     "bitrate": "match(^(96|160|320)$)"
   }
