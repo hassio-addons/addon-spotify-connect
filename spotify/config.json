@@ -14,7 +14,7 @@
   "options": {
     "username": "",
     "password": "",
-    "name": "Hass.io",
+    "name": "HomeAssistant",
     "bitrate": 160
   },
   "schema": {
