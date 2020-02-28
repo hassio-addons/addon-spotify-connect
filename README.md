@@ -38,15 +38,11 @@ have to do is hook up your sound system to the Pi and start booming!
 
 ## Installation
 
-**IMPORTANT**: _This add-on requires a Spotify Premium account!_
-
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
 1. Search for the "Spotify Connect" add-on in the Supervisor add-on store
    and install it.
-1. Put in your Spotify account details into the `username`/`password` options.
-1. Click the `Save` button to store your credentials.
 1. Select your audio output device and hit `Save` on that as well.
 1. Start the "Spotify Connect" add-on.
 1. Check the logs of the "Spotify Connect" to see if everything went well.
@@ -60,10 +56,10 @@ Example add-on configuration:
 
 ```yaml
 log_level: info
-username: frenck@example.com
-password: MySpotifyPassword
 name: HomeAssistant
 bitrate: 320
+username: frenck@example.com
+password: MySpotifyPassword
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -89,21 +85,6 @@ you are troubleshooting.
 Setting the `log_level` to `debug` will also turn on debug mode on the
 Spotify service.
 
-### Option: `username`
-
-The username you use to login to your Spotify Premium account.
-
-When this username is left empty `""`, Spotify Connect will start in
-discovery mode.
-
-**Note**: _This option support secrets, e.g., `!secret spotify_username`._
-
-### Option: `password`
-
-The password you use to login to your Spotify Premium account.
-
-**Note**: _This option support secrets, e.g., `!secret spotify_password`._
-
 ### Option: `name`
 
 The name of your device (the Spotify Connect target), as shown on
@@ -117,6 +98,20 @@ The bitrate Spotify should use. The higher, the better the sound quality,
 however, the add-on consumes more data.
 
 Valid values: `96`, `160` (default) or `320`.
+
+### Option: `username`
+
+**IMPORTANT**: _This requires a Spotify Premium account!_
+
+The username you use to login to your Spotify Premium account. Setting
+this will bind the add-on to your account exclusively.
+
+This can be helpful when experiencing discovery issues on your network or
+to disallow guests on your network to use the add-on.
+
+### Option: `password`
+
+The password you use to login to your Spotify Premium account.
 
 ## Known issues and limitations
 
