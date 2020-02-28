@@ -13,16 +13,14 @@
   "host_network": true,
   "audio": true,
   "options": {
-    "username": "",
-    "password": "",
     "name": "HomeAssistant",
     "bitrate": 160
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
-    "username": "str",
-    "password": "password",
-    "name": "match(^[A-Za-z0-9-.]+$)",
-    "bitrate": "match(^(96|160|320)$)"
+    "username": "str?",
+    "password": "password?",
+    "name": "match(^[A-Za-z0-9-.]+$)?",
+    "bitrate": "list(96|160|320)"
   }
 }
