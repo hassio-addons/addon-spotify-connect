@@ -36,7 +36,7 @@ For example; Running Home Assistant on a Raspberry Pi with this add-on
 installed will allow you to play your Spotify music on the Pi. So all you'll
 have to do is hook up your sound system to the Pi and start booming!
 
-[:books: Read the full add-on documentation][docs]
+[:books: Read the full add-on documentation](spotify/DOCS.md)
 
 ## Support
 
