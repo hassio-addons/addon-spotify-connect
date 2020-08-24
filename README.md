@@ -36,7 +36,7 @@ For example; Running Home Assistant on a Raspberry Pi with this add-on
 installed will allow you to play your Spotify music on the Pi. So all you'll
 have to do is hook up your sound system to the Pi and start booming!
 
-[:books: Read the full add-on documentation](spotify/DOCS.md)
+[:books: Read the full add-on documentation][docs]
 
 ## Support
 
@@ -111,7 +111,7 @@ SOFTWARE.
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/addon-spotify-connect/blob/master/spotify-connect/DOCS.md
+[docs]: https://github.com/hassio-addons/addon-spotify-connect/blob/master/spotify/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-spotify-connect/61210?u=frenck
 [frenck]: https://github.com/frenck
