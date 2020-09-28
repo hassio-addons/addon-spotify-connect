@@ -33,6 +33,7 @@ name: HomeAssistant
 bitrate: 320
 username: frenck@example.com
 password: MySpotifyPassword
+status_entity: sensor.spotify_connect
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -85,6 +86,12 @@ to disallow guests on your network to use the add-on.
 ### Option: `password`
 
 The password you use to login to your Spotify Premium account.
+
+### Option: `status_entity`
+
+The `status_entity` is optional and allows the add-on to update its status to a Home Assistant entity.
+
+This is helpful for automations requiring immediate Spotify status - something that the Spotify integration can't do because it uses pooling method.
 
 ## Known issues and limitations
 

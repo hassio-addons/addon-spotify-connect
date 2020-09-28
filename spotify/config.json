@@ -10,6 +10,7 @@
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
+  "homeassistant_api": true,
   "host_network": true,
   "audio": true,
   "options": {
@@ -20,6 +21,7 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "username": "str?",
     "password": "password?",
+    "status_entity": "str?",
     "name": "match(^[A-Za-z0-9-.]+$)?",
     "bitrate": "list(96|160|320)"
   }

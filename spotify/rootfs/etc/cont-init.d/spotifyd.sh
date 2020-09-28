@@ -36,3 +36,13 @@ bitrate=$(bashio::config 'bitrate')
     echo "device_name =${name}"
     echo "bitrate =${bitrate}"
 } >> /etc/spotifyd.conf
+
+if bashio::config.has_value 'status_entity'; then
+    status_entity=$(bashio::config 'status_entity')
+    echo "on_song_change_hook = /usr/bin/song_change_hook.sh" >> /etc/spotifyd.conf
+    {
+        echo "#!/bin/bash"
+        echo "curl -X POST -H \"Authorization: Bearer \${SUPERVISOR_TOKEN}\" -H \"Content-Type: application/json\" -d \"{\\\"state\\\": \\\"\$PLAYER_EVENT\\\", \\\"attributes\\\": {\\\"track_id\\\": \\\"\$TRACK_ID\\\"}}\" http://supervisor/core/api/states/${status_entity}"
+    } > /usr/bin/song_change_hook.sh
+    exec chmod a+x /usr/bin/song_change_hook.sh
+fi
