@@ -7,6 +7,7 @@ declare username
 declare password
 declare name
 declare bitrate
+declare initial_volume
 
 if ! bashio::config.has_value 'name'; then
     bashio::log.fatal
@@ -36,3 +37,10 @@ bitrate=$(bashio::config 'bitrate')
     echo "device_name =${name}"
     echo "bitrate =${bitrate}"
 } >> /etc/spotifyd.conf
+
+if bashio::config.has_value 'initial_volume'; then
+    initial_volume=$(bashio::config 'initial_volume')
+    {
+        echo "initial_volume =${initial_volume}"
+    } >> /etc/spotifyd.conf
+fi
