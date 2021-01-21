@@ -47,7 +47,7 @@ dealing with an unknown issue. Possible values are:
 - `debug`: Shows detailed debug information.
 - `info`: Normal (usually) interesting events.
 - `warning`: Exceptional occurrences that are not errors.
-- `error`:  Runtime errors that do not require immediate action.
+- `error`: Runtime errors that do not require immediate action.
 - `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
 Please note that each level automatically includes log messages from a
@@ -63,7 +63,7 @@ Spotify service.
 The name of your device (the Spotify Connect target), as shown on
 the official Spotify clients.
 
-**Note**: _May only contain letters, numbers, hyphens (`-`) and dots (`.`)
+**Note**: \_May only contain letters, numbers, hyphens (`-`) and dots (`.`)
 
 ### Option: `bitrate`
 
@@ -95,16 +95,15 @@ The password you use to login to your Spotify Premium account.
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
+functionality.
 
 Releases are based on [Semantic Versioning][semver], and use the format
-of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
 based on the following:
 
-- ``MAJOR``: Incompatible or major changes.
-- ``MINOR``: Backwards-compatible new features and enhancements.
-- ``PATCH``: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
 ## Support
 
@@ -158,7 +157,6 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-spotify-connect/61210?u=frenck
 [frenck]: https://github.com/frenck
 [issue]: https://github.com/hassio-addons/addon-spotify-connect/issues
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [reddit]: https://reddit.com/r/homeassistant
 [releases]: https://github.com/hassio-addons/addon-spotify-connect/releases
 [semver]: http://semver.org/spec/v2.0.0.htm
