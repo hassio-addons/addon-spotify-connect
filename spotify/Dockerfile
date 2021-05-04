@@ -34,7 +34,6 @@ RUN \
         --locked \
         --no-default-features \
         --features pulseaudio-backend \
-        --jobs $(grep -c ^processor /proc/cpuinfo) \
         --release \
         --verbose \ 
     \
