@@ -1,19 +1,41 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community Add-on: Spotify Connect
-# Runs spotifyd
+# Runs librespot
 # ==============================================================================
 declare -a options
+declare bitrate
+declare name
+declare password
+declare username
 
 bashio::log.info 'Starting the Spotify daemon...'
 
-# Run spotifyd in the foreground
-options+=(--no-daemon)
+# Bitrate
+options+=(--bitrate $(bashio::config 'bitrate'))
+
+# Device name
+name=$(bashio::config 'name')
+options+=(--name "${name}")
+
+# Username / password
+if bashio::config.has_value 'username'; then
+    bashio::config.require.password
+
+    username=$(bashio::config 'username')
+    password=$(bashio::config 'password')
+
+    options+=(--username "${username}")
+    options+=(--password "${password}")
+fi
+
+# Save writes
+options+=(--disable-audio-cache)
 
 # Are we running in debug mode?
 if bashio::debug; then
   options+=(--verbose)
 fi
 
-# Run spotifyd
-exec spotifyd "${options[@]}"
+# Run librespot
+exec librespot "${options[@]}"

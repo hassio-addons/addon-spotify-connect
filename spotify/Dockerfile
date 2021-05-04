@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:5.2.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,41 +8,36 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 # hadolint ignore=DL3003
 RUN \
-    apt-get update \
+    apk add --no-cache --virtual .build-dependencies \
+        build-base=0.5-r2 \
+        cargo=1.47.0-r2 \
+        pulseaudio-dev=14.1-r0 \
     \
-    && apt-get install -y --no-install-recommends \
-        build-essential=12.4ubuntu1 \
-        cargo=0.44.1-0ubuntu1~18.04.1 \
-        git=1:2.17.1-1ubuntu0.7 \
-        libasound2-data=1.1.3-5ubuntu0.5 \
-        libasound2-dev=1.1.3-5ubuntu0.5 \
-        libasound2-plugins=1.1.1-1ubuntu1 \
-        libasound2=1.1.3-5ubuntu0.5 \
-        libssl-dev=1.1.1-1ubuntu2.1~18.04.6 \
-        pkg-config=0.29.1-0ubuntu2 \
-        rustc=1.43.0+dfsg1+llvm-1~exp1ubuntu2~18.04.1 \
+    && apk add --no-cache \
+        pulseaudio=14.1-r0 \
     \
-    && git clone --branch "v0.2.24" --depth=1 \
-        https://github.com/Spotifyd/spotifyd.git /tmp/spotifyd \
+    && curl -J -L -o /tmp/librespot.tar.gz \
+        "https://github.com/librespot-org/librespot/archive/v0.2.0.tar.gz" \
     \
-    && cd /tmp/spotifyd \
-    && cargo build --release \
-    && mv /tmp/spotifyd/target/release/spotifyd /usr/bin \
+    && mkdir /tmp/librespot \
+    && tar zxvf \
+        /tmp/librespot.tar.gz \
+        --strip 1 -C /tmp/librespot \
     \
-    && apt-get purge -y --auto-remove \
-        build-essential \
-        cargo \
-        git \
-        libasound2-dev \
-        libssl-dev \
-        pkg-config \
-        rustc \
+    && export RUSTFLAGS="-C target-feature=-crt-static" \
+    && export CARGO_HOME="/tmp/librespot/cargo" \
     \
-    && rm -fr \
-        /tmp/* \
-        /root/.cargo \
-        /var/{cache,log}/* \
-        /var/lib/apt/lists/*
+    && cd /tmp/librespot \
+    && cargo build \
+        --no-default-features \
+        --features pulseaudio-backend \ 
+        --release \
+        --verbose \ 
+    \
+    && mv /tmp/librespot/target/release/librespot /usr/bin/librespot \
+    \
+    && apk del --no-cache --purge .build-dependencies \
+    && rm -fr /tmp/*
 
 # Copy root filesystem
 COPY rootfs /

@@ -63,8 +63,6 @@ Spotify service.
 The name of your device (the Spotify Connect target), as shown on
 the official Spotify clients.
 
-**Note**: \_May only contain letters, numbers, hyphens (`-`) and dots (`.`)
-
 ### Option: `bitrate`
 
 The bitrate Spotify should use. The higher, the better the sound quality,
@@ -88,8 +86,6 @@ The password you use to login to your Spotify Premium account.
 
 ## Known issues and limitations
 
-- This add-on does support ARM-based devices, nevertheless, they must
-  at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
 - This add-on requires a Spotify Premium account.
 
 ## Changelog & Releases
