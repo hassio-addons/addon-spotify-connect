@@ -29,6 +29,7 @@ RUN \
     \
     && cd /tmp/librespot \
     && cargo build \
+        --locked \
         --no-default-features \
         --features pulseaudio-backend \
         --release \
