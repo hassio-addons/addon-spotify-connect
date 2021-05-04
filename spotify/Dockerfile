@@ -28,6 +28,7 @@ RUN \
     \
     && export RUSTFLAGS="-C target-feature=-crt-static" \
     && export CARGO_HTTP_MULTIPLEXING="false" \
+    && export CARGO_NET_GIT_FETCH_WITH_CLI="true" \
     \
     && cd /usr/src/local/librespot \
     && cargo build \
