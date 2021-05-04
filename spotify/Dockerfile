@@ -30,7 +30,7 @@ RUN \
     && cd /tmp/librespot \
     && cargo build \
         --no-default-features \
-        --features pulseaudio-backend \ 
+        --features pulseaudio-backend \
         --release \
         --verbose \ 
     \
