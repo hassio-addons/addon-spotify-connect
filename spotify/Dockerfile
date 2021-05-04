@@ -11,6 +11,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
         cargo=1.47.0-r2 \
+        git=2.30.2-r0 \
+        protobuf-dev=3.13.0-r2 \
         pulseaudio-dev=14.1-r0 \
     \
     && apk add --no-cache \
@@ -19,26 +21,30 @@ RUN \
     && curl -J -L -o /tmp/librespot.tar.gz \
         "https://github.com/librespot-org/librespot/archive/v0.2.0.tar.gz" \
     \
-    && mkdir /tmp/librespot \
+    && mkdir -p /usr/src/local/librespot \
     && tar zxvf \
         /tmp/librespot.tar.gz \
-        --strip 1 -C /tmp/librespot \
+        --strip 1 -C /usr/src/local/librespot \
     \
     && export RUSTFLAGS="-C target-feature=-crt-static" \
-    && export CARGO_HOME="/tmp/librespot/cargo" \
+    && export CARGO_HTTP_MULTIPLEXING="false" \
     \
-    && cd /tmp/librespot \
+    && cd /usr/src/local/librespot \
     && cargo build \
         --locked \
         --no-default-features \
         --features pulseaudio-backend \
+        --jobs $(grep -c ^processor /proc/cpuinfo) \
         --release \
         --verbose \ 
     \
-    && mv /tmp/librespot/target/release/librespot /usr/bin/librespot \
+    && mv target/release/librespot /usr/bin/librespot \
     \
     && apk del --no-cache --purge .build-dependencies \
-    && rm -fr /tmp/*
+    && rm -fr \
+        /tmp/* \
+        /usr/src/local/librespot \
+        ~/.cargo
 
 # Copy root filesystem
 COPY rootfs /
