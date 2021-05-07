@@ -14,6 +14,12 @@ bashio::log.info 'Starting the Spotify daemon...'
 # Bitrate
 options+=(--bitrate $(bashio::config 'bitrate'))
 
+# Initial volume
+options+=(--initial-volume $(bashio::config 'initial_volume'))
+
+# Volume scaling
+options+=(--volume-ctrl $(bashio::config 'volume_scaling'))
+
 # Device name
 name=$(bashio::config 'name')
 options+=(--name "${name}")

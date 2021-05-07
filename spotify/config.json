@@ -9,12 +9,16 @@
   "audio": true,
   "options": {
     "name": "Home Assistant",
-    "bitrate": 160
+    "bitrate": 160,
+    "initial_volume": 100,
+    "volume_scaling": "log"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "name": "str",
     "bitrate": "list(96|160|320)",
+    "initial_volume": "int(0,100)?",
+    "volume_scaling": "list(linear|log|fixed)?",
     "username": "str?",
     "password": "password?"
   }

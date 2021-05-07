@@ -70,6 +70,18 @@ however, the add-on consumes more data.
 
 Valid values: `96`, `160` (default) or `320`.
 
+### Option: `initial_volume`
+
+The initial volume Spotify should be set to.
+
+Valid values: any integer value between `0` and `100` (default).
+
+### Option: `volume_scaling`
+
+The type of scale used by the volume slider.
+
+Valid values: `log` (default), `linear` or `fixed`.
+
 ### Option: `username`
 
 **IMPORTANT**: _This requires a Spotify Premium account!_

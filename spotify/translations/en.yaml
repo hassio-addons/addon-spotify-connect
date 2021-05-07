@@ -14,6 +14,15 @@ configuration:
     description: >-
       The bitrate Spotify should use. The higher, the better the sound quality,
       however, the add-on consumes more data.
+  initial_volume:
+    name: Initial volume
+    description: >-
+      The initial volume Spotify should be set to (0-100).
+  volume_scaling:
+    name: Volume scaling
+    description: >-
+      The type of scale used by the volume slider. Choose between logarithmic (default),
+      linear, or fixed.
   username:
     name: Spotify username
     description: >-
