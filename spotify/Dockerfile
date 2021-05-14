@@ -31,7 +31,9 @@ RUN \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
         /tmp/* \
-        ~/.cargo
+        ~/.cargo \
+        /usr/.crates.toml \
+        /usr/.crates2.json
 
 # Copy root filesystem
 COPY rootfs /
