@@ -18,31 +18,22 @@ RUN \
     && apk add --no-cache \
         pulseaudio=14.1-r0 \
     \
-    && curl -J -L -o /tmp/librespot.tar.gz \
-        "https://github.com/librespot-org/librespot/archive/v0.2.0.tar.gz" \
-    \
-    && mkdir -p /usr/src/local/librespot \
-    && tar zxvf \
-        /tmp/librespot.tar.gz \
-        --strip 1 -C /usr/src/local/librespot \
-    \
-    && export RUSTFLAGS="-C target-feature=-crt-static" \
-    && export CARGO_NET_GIT_FETCH_WITH_CLI="true" \
-    \
-    && cd /usr/src/local/librespot \
-    && cargo build \
+    && cargo install \
+        --locked \
         --no-default-features \
         --features pulseaudio-backend \
-        --release \
+        --root /usr \
+        --bin librespot \
+        --version 0.2.0 \
         --verbose \ 
-    \
-    && mv target/release/librespot /usr/bin/librespot \
+        -- librespot \
     \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
         /tmp/* \
-        /usr/src/local/librespot \
-        ~/.cargo
+        ~/.cargo \
+        /usr/.crates.toml \
+        /usr/.crates2.json
 
 # Copy root filesystem
 COPY rootfs /
