@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,13 +10,13 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
-        cargo=1.47.0-r2 \
-        git=2.30.2-r0 \
-        protobuf-dev=3.13.0-r2 \
-        pulseaudio-dev=14.1-r0 \
+        cargo=1.52.0-r0 \
+        git=2.32.0-r0 \
+        protobuf-dev=3.15.7-r1 \
+        pulseaudio-dev=14.2-r5 \
     \
     && apk add --no-cache \
-        pulseaudio=14.1-r0 \
+        pulseaudio=14.2-r5 \
     \
     && cargo install \
         --locked \
