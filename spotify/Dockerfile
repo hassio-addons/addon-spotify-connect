@@ -10,7 +10,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r2 \
-        cargo=1.52.0-r0 \
+        cargo=1.52.1-r1 \
         git=2.32.0-r0 \
         protobuf-dev=3.15.7-r1 \
         pulseaudio-dev=14.2-r5 \
