@@ -12,13 +12,13 @@ configuration:
   bitrate:
     name: Bitráta
     description: >-
-      A Spotify által használt bitráta beállítása. Minél magasabb, annál jobb 
+      A Spotify által használt bitráta beállítása. Minél magasabb, annál jobb
       minőségű, viszont ez nagyobb adatforgalommal jár.
   username:
     name: Spotify felhasználónév
     description: >-
-      Spotify Premium előfizetéssel rendelkező fiók felhasználóneve. 
-      Ez akkor lehet hasznos, ha a Spotify alkalmazás nem találja  
+      Spotify Premium előfizetéssel rendelkező fiók felhasználóneve.
+      Ez akkor lehet hasznos, ha a Spotify alkalmazás nem találja
       ezt a kiegészítőt. (Opcionális)
   password:
     name: Spotify jelszó
