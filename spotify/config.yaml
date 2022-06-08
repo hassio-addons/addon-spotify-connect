@@ -12,6 +12,7 @@ arch:
   - i386
 host_network: true
 audio: true
+init: false
 options:
   name: Home Assistant
   bitrate: 160
