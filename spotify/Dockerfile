@@ -18,15 +18,18 @@ RUN \
     && apk add --no-cache \
         pulseaudio=15.0-r2 \
     \
-    && cargo install \
-        --locked \
-        --no-default-features \
-        --features pulseaudio-backend \
-        --root /usr \
-        --bin librespot \
-        --version 0.3.1 \
+    && CARGO_NET_GIT_FETCH_WITH_CLI=true \
+        cargo install \
+            --locked \
+            --no-default-features \
+            --features pulseaudio-backend \
+            --root /usr \
+            --bin librespot \
+            --version 0.4.1 \
+            --verbose \ 
         --verbose \ 
-        -- librespot \
+            --verbose \ 
+            -- librespot \
     \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
