@@ -27,8 +27,6 @@ RUN \
             --bin librespot \
             --version 0.4.1 \
             --verbose \ 
-        --verbose \ 
-            --verbose \ 
             -- librespot \
     \
     && apk del --no-cache --purge .build-dependencies \
