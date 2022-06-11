@@ -7,7 +7,7 @@ configuration:
   name:
     name: Nome
     description: >-
-      Il nome del tuo dispositivo (the Spotify Connect target), mostrato sui
+      Il nome del tuo dispositivo mostrato sui
       client ufficiali di Spotify.
   bitrate:
     name: Bitrate
