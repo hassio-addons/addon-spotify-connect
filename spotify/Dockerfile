@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -9,25 +9,24 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        build-base=0.5-r2 \
+        build-base=0.5-r3 \
         cargo=1.60.0-r2 \
-        git=2.36.1-r0 \
+        git=2.36.2-r0 \
         protobuf-dev=3.18.1-r2 \
         pulseaudio-dev=15.0-r2 \
     \
     && apk add --no-cache \
         pulseaudio=15.0-r2 \
     \
-    && CARGO_NET_GIT_FETCH_WITH_CLI=true \
-        cargo install \
-            --locked \
-            --no-default-features \
-            --features pulseaudio-backend \
-            --root /usr \
-            --bin librespot \
-            --version 0.4.1 \
-            --verbose \ 
-            -- librespot \
+    && cargo install \
+        --locked \
+        --no-default-features \
+        --features pulseaudio-backend \
+        --root /usr \
+        --bin librespot \
+        --version 0.4.1 \
+        --verbose \ 
+        -- librespot \
     \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
