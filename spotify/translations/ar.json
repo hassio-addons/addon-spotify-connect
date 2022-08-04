@@ -1,0 +1,24 @@
+---
+configuration:
+  log_level:
+    name: مستوى السجل
+    description: >-
+      يتحكم في مستوى تفاصيل السجل التي توفرها الإضافة.
+  name:
+    name: الإسم
+    description: >-
+      إسم جهازك (the Spotify Connect target), كما هو موضح في.
+  bitrate:
+    name: معدل البت
+    description: >-
+      يجب أن يستخدم Spotify معدل البت. كلما كان أعلى كان الصوت أعلى دقة،
+       تستهلك الوظيفة الإضافية المزيد من البيانات.
+  username:
+    name: اسم مستخدم سبوتيفاي
+    description: >-
+      اسم مستخدم (اختياري) تستخدمه لتسجيل الدخول إلى Spotify Premium الخاص بك
+       الحساب. يمكن أن يكون هذا مفيدًا عند اكتشاف المشكلات.
+  password:
+    name: كلمة مرور سبوتيفاي
+    description: >-
+      كلمة المرور لتسجيل الدخول إلى حساب Spotify Premium الخاص بك باستخدام.
