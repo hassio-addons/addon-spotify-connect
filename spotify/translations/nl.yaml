@@ -1,0 +1,25 @@
+---
+configuration:
+  log_level:
+    name: Log-niveau
+    description: >-
+      Bepaalt het niveau van logboekdetails die de add-on biedt.
+  name:
+    name: Naam
+    description: >-
+      De naam van je device (het Spotify Connectie-doel), zoals het er
+      uit ziet op de officiële Spotify-cliënten.
+  bitrate:
+    name: Bitsnelheid
+    description: >-
+      De bitrate die Spotify moet gebruiken. Hoe hoger, hoe beter de geluidskwaliteit,
+      de add-on verbruikt echter meer gegevens.
+  username:
+    name: Spotify gebruikersnaam
+    description: >-
+      Een optionele gebruikersnaam die u gebruikt om in te loggen op uw Spotify Premium
+      account. Dit kan handig zijn bij detectieproblemen.
+  password:
+    name: Spotify wachtwoord
+    description: >-
+      Het wachtwoord waarmee je inlogt op je Spotify Premium account.
