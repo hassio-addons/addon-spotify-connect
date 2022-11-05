@@ -1,0 +1,22 @@
+---
+configuration:
+  log_level:
+    name: Olay Günlüğü Düzeyi
+    description: >-
+      Eklentinin sağladığı olay günlüğü ayrıntılarının düzeyini kontrol eder.
+  name:
+    name: İsim
+    description: >-
+      Cihazınızın adı. (Spotify üzerinde görünecek hoparlör adı.)
+  bitrate:
+    name: Ses Kalitesi
+    description: >-
+      Spotify'ın kullanması gereken bit hızı. Ne kadar yüksek olursa, ses kalitesi o kadar iyi olur, ancak eklenti daha fazla veri tüketir.
+  username:
+    name: Spotify Kullanıcı Adı veya E-Postası
+    description: >-
+      Spotify Premium'a giriş yapmak için kullandığın isteğe bağlı bir kullanıcı adı veya Spotify hesabınız için kullandığınız e-posta adresi. Bu, keşif sorunları yaşarken yardımcı olabilir.
+  password:
+    name: Spotify Şifresi
+    description: >-
+      Spotify Premium hesabınıza giriş yapmak için kullanacağınız şifre.
