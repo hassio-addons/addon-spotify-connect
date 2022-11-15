@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.7
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -11,8 +11,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
         cargo=1.60.0-r2 \
-        git=2.36.2-r0 \
-        protobuf-dev=3.18.1-r2 \
+        git=2.36.3-r0 \
+        protobuf-dev=3.18.1-r3 \
         pulseaudio-dev=15.0-r2 \
     \
     && apk add --no-cache \
