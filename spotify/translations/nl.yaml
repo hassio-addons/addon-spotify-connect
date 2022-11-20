@@ -10,10 +10,10 @@ configuration:
       De naam van je device (het Spotify Connectie-doel), zoals het er
       uit ziet op de officiële Spotify-cliënten.
   bitrate:
-    name: Bitsnelheid
+    name: Bitrate
     description: >-
       De bitrate die Spotify moet gebruiken. Hoe hoger, hoe beter de geluidskwaliteit,
-      de add-on verbruikt echter meer gegevens.
+      de add-on verbruikt echter meer internet.
   username:
     name: Spotify gebruikersnaam
     description: >-
