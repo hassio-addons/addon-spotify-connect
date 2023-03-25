@@ -6,6 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
+ARG LIBRESPOT_VERSION="0.4.2"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -24,7 +25,7 @@ RUN \
         --features pulseaudio-backend \
         --root /usr \
         --bin librespot \
-        --version 0.4.2 \
+        --version "${LIBRESPOT_VERSION}" \
         --verbose \ 
         -- librespot \
     \
