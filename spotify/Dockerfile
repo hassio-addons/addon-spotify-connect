@@ -11,13 +11,13 @@ ARG LIBRESPOT_VERSION="0.4.2"
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        cargo=1.64.0-r2 \
-        git=2.38.5-r0 \
-        protobuf-dev=3.21.9-r0 \
-        pulseaudio-dev=16.1-r6 \
+        cargo=1.69.0-r5 \
+        git=2.40.1-r0 \
+        protobuf-dev=3.21.12-r2 \
+        pulseaudio-dev=16.1-r10 \
     \
     && apk add --no-cache \
-        pulseaudio=16.1-r6 \
+        pulseaudio=16.1-r10 \
     \
     && cargo install \
         --locked \
