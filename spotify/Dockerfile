@@ -7,6 +7,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 ARG LIBRESPOT_VERSION="0.4.2"
+ENV PYTHONUNBUFFERED=1
+
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -18,6 +20,7 @@ RUN \
     \
     && apk add --no-cache \
         pulseaudio=16.1-r10 \
+        python3=3.11.4-r0 \
     \
     && cargo install \
         --locked \

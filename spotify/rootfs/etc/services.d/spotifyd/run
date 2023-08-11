@@ -37,5 +37,6 @@ if bashio::debug; then
   options+=(--verbose)
 fi
 
-# Run librespot
+# Run librespot runner
 exec librespot "${options[@]}"
+
