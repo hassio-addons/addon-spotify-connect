@@ -8,6 +8,7 @@ declare bitrate
 declare name
 declare password
 declare username
+declare autoplay
 
 bashio::log.info 'Starting the Spotify daemon...'
 
@@ -31,6 +32,11 @@ fi
 
 # Save writes
 options+=(--disable-audio-cache)
+
+# Toggle autoplay
+if bashio::config.true 'autoplay'; then
+  options+=(--verbose)
+fi
 
 # Are we running in debug mode?
 if bashio::debug; then
