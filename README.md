@@ -119,7 +119,7 @@ SOFTWARE.
 [github-actions]: https://github.com/hassio-addons/addon-spotify-connect/actions
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 [issue]: https://github.com/hassio-addons/addon-spotify-connect/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-spotify-connect.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
