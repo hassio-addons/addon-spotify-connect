@@ -9,7 +9,6 @@ arch:
   - aarch64
   - amd64
   - armv7
-  - i386
 host_network: true
 audio: true
 init: false
