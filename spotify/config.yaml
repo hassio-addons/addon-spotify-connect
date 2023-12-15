@@ -15,7 +15,6 @@ init: false
 options:
   name: Home Assistant
   bitrate: 160
-  autoplay: true
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   name: str
