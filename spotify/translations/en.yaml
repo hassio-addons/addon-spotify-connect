@@ -23,3 +23,7 @@ configuration:
     name: Spotify password
     description: >-
       The password to log into your Spotify Premium account with.
+  autoplay:
+    name: Autoplay
+    description: >-
+      Whether Spotify should autoplay similar songs at the end of the queue.
