@@ -29,6 +29,11 @@ if bashio::config.has_value 'username'; then
     options+=(--password "${password}")
 fi
 
+# Initial volume
+if bashio::config.has_value 'initial_volume'; then
+  options+=(--initial-volume $(bashio::config 'initial_volume'))
+fi
+
 # Save writes
 options+=(--disable-audio-cache)
 

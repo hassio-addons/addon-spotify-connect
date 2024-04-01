@@ -23,3 +23,7 @@ configuration:
     name: Spotify password
     description: >-
       The password to log into your Spotify Premium account with.
+  initial_volume:
+    name: Initial volume
+    description: >-
+      The initial volume in % from 0-100.
