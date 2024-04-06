@@ -23,3 +23,7 @@ configuration:
     name: Spotify password
     description: >-
       The password to log into your Spotify Premium account with.
+  enable_volume_normalisation:
+    name: Enable volume normalisation
+    description: >-
+      Whether to enable volume normalisation.

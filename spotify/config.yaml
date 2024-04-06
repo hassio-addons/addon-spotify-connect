@@ -21,3 +21,4 @@ schema:
   bitrate: list(96|160|320)
   username: str?
   password: password?
+  enable_volume_normalisation: bool?

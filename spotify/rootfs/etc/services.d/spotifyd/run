@@ -29,6 +29,11 @@ if bashio::config.has_value 'username'; then
     options+=(--password "${password}")
 fi
 
+# Volume Normalisation
+if bashio::config.true 'enable_volume_normalisation'; then
+  options+=(--enable-volume-normalisation)
+fi
+
 # Save writes
 options+=(--disable-audio-cache)
 

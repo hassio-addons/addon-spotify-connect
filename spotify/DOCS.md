@@ -37,6 +37,7 @@ name: HomeAssistant
 bitrate: 320
 username: frenck@example.com
 password: MySpotifyPassword
+enable_volume_normalisation: false
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -87,6 +88,10 @@ to disallow guests on your network to use the add-on.
 ### Option: `password`
 
 The password you use to login to your Spotify Premium account.
+
+### Option: `enable_volume_normalisation`
+
+Whether to enable volume normalisation. For more info see the [librespot documentation][librespot-volume-normalisation].
 
 ## Known issues and limitations
 
@@ -159,6 +164,7 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-spotify-connect/61210?u=frenck
 [frenck]: https://github.com/frenck
 [issue]: https://github.com/hassio-addons/addon-spotify-connect/issues
+[librespot-volume-normalisation]: https://github.com/librespot-org/librespot/wiki/Options#volume-normalisation
 [reddit]: https://reddit.com/r/homeassistant
 [releases]: https://github.com/hassio-addons/addon-spotify-connect/releases
 [semver]: http://semver.org/spec/v2.0.0.htm
