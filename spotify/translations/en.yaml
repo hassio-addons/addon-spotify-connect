@@ -23,3 +23,8 @@ configuration:
     name: Spotify password
     description: >-
       The password to log into your Spotify Premium account with.
+  librespot_options:
+    name: Librespot options
+    description: >-
+      Additional options for librespot. For available options see:
+      https://github.com/librespot-org/librespot/wiki/Options.
