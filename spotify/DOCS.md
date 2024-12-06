@@ -77,7 +77,16 @@ Valid values: `96`, `160` (default) or `320`.
 
 ### Option: `initial-volume`
 
-Initial volume in % from 0-100. Default for softvol: 50. For the alsa mixer: the current volume.
+Initial volume in % from 0-100. This setting takes effect when the addon starts or
+recovers from a crash. The behavior depends on the volume backend in use:
+
+- For softvol (default backend): Uses the specified value, defaulting to 50%
+- For alsa mixer: Uses the specified value, falling back to the current system volume if not set
+
+To determine which backend is in use, check the addon logs for "Using softvol" or
+"Using alsa mixer" messages during startup.
+
+initial-volume: 50  # Optional, defaults to 50 for softvol
 
 ### Option: `username`
 
