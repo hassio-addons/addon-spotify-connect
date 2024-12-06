@@ -14,6 +14,12 @@ configuration:
     description: >-
       Il bitrate che Spotify dovrebbe usare. Piú é alto, migliore é la qualitá sonora,
       tuttavia, l'add-on consumerá piú banda.
+  initial-volume:
+    name: Initial Volume
+    description: >-
+      Volume iniziale in % da 0 a 100.
+      Impostazione predefinita per softvol: 50.
+      Per il mixer alsa: il volume attuale.
   username:
     name: Spotify username
     description: >-

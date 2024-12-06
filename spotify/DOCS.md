@@ -35,6 +35,7 @@ Example add-on configuration:
 log_level: info
 name: HomeAssistant
 bitrate: 320
+initial-volume: 50
 username: frenck@example.com
 password: MySpotifyPassword
 ```
@@ -73,6 +74,10 @@ The bitrate Spotify should use. The higher, the better the sound quality,
 however, the add-on consumes more data.
 
 Valid values: `96`, `160` (default) or `320`.
+
+### Option: `initial-volume`
+
+Initial volume in % from 0-100. Default for softvol: 50. For the alsa mixer: the current volume.
 
 ### Option: `username`
 
