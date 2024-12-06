@@ -22,4 +22,4 @@ schema:
   bitrate: list(96|160|320)
   username: str?
   password: password?
-  initial-volume: int?
+  initial-volume: match(^([0-9]|[1-9][0-9]|100)$)?
