@@ -86,7 +86,7 @@ recovers from a crash. The behavior depends on the volume backend in use:
 To determine which backend is in use, check the addon logs for "Using softvol" or
 "Using alsa mixer" messages during startup.
 
-initial-volume: 50  # Optional, defaults to 50 for softvol
+initial-volume: 50 # Optional, defaults to 50 for softvol
 
 ### Option: `username`
 
