@@ -15,7 +15,7 @@ configuration:
       A Spotify által használt bitráta beállítása. Minél magasabb, annál jobb
       minőségű, viszont ez nagyobb adatforgalommal jár.
   initial-volume:
-    name: Initial Volume
+    name: Kezdeti térfogat
     description: >-
       Kezdeti térfogat %-ban 0-100 között.
       A softvol alapértelmezett értéke: 50.
