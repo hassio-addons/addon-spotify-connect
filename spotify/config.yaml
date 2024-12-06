@@ -15,9 +15,11 @@ init: false
 options:
   name: Home Assistant
   bitrate: 160
+  initial-volume: 50
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   name: str
   bitrate: list(96|160|320)
   username: str?
   password: password?
+  initial-volume: int?
