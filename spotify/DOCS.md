@@ -81,7 +81,7 @@ Valid values: `96`, `160` (default) or `320`.
 Initial volume in % from 0-100. This setting takes effect when the addon starts or
 recovers from a crash.
 
-initial-volume: 50 # Optional, defaults to 50 for softvol
+initial-volume: 50 # Optional
 
 ### Option: `username`
 
