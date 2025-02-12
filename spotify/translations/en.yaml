@@ -18,8 +18,6 @@ configuration:
     name: Initial Volume
     description: >-
       Initial volume in % from 0-100.
-      Default for softvol: 50.
-      For the alsa mixer: the current volume.
   username:
     name: Spotify username
     description: >-
