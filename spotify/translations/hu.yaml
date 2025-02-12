@@ -18,8 +18,6 @@ configuration:
     name: Kezdeti térfogat
     description: >-
       Kezdeti térfogat %-ban 0-100 között.
-      A softvol alapértelmezett értéke: 50.
-      Az alsa keverő esetében: az aktuális térfogat.
   username:
     name: Spotify felhasználónév
     description: >-
