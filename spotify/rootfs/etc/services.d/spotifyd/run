@@ -9,11 +9,21 @@ declare name
 declare password
 declare username
 declare autoplay
+declare initial-volume
 
 bashio::log.info 'Starting the Spotify daemon...'
 
 # Bitrate
 options+=(--bitrate $(bashio::config 'bitrate'))
+
+# Initial Volume
+initial_volume=$(bashio::config 'initial-volume')
+if ! [[ "$initial_volume" =~ ^[0-9]+$ ]] || [ "$initial_volume" -lt 0 ] || [ "$initial_volume" -gt 100 ]; then
+    bashio::log.warning "Invalid initial-volume value: $initial_volume. Using default."
+    initial_volume=50
+fi
+options+=(--initial-volume "$initial_volume")
+
 
 # Device name
 name=$(bashio::config 'name')

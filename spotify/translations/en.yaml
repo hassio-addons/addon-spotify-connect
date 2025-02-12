@@ -14,6 +14,10 @@ configuration:
     description: >-
       The bitrate Spotify should use. The higher, the better the sound quality,
       however, the add-on consumes more data.
+  initial-volume:
+    name: Initial Volume
+    description: >-
+      Initial volume in % from 0-100.
   username:
     name: Spotify username
     description: >-
