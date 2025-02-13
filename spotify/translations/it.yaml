@@ -14,7 +14,7 @@ configuration:
     description: >-
       Il bitrate che Spotify dovrebbe usare. Piú é alto, migliore é la qualitá sonora,
       tuttavia, l'add-on consumerá piú banda.
-  initial-volume:
+  initial_volume:
     name: Volume Iniziale
     description: >-
       Volume iniziale in % da 0 a 100.

@@ -35,7 +35,7 @@ Example add-on configuration:
 log_level: info
 name: HomeAssistant
 bitrate: 320
-initial-volume: 50
+initial_volume: 50
 username: frenck@example.com
 password: MySpotifyPassword
 autoplay: true
@@ -76,12 +76,12 @@ however, the add-on consumes more data.
 
 Valid values: `96`, `160` (default) or `320`.
 
-### Option: `initial-volume`
+### Option: `initial_volume`
 
 Initial volume in % from 0-100. This setting takes effect when the addon starts or
 recovers from a crash.
 
-initial-volume: 50 # Optional
+initial_volume: 50 # Optional
 
 ### Option: `username`
 
