@@ -9,7 +9,7 @@ declare name
 declare password
 declare username
 declare autoplay
-declare initial-volume
+declare initial_volume
 
 bashio::log.info 'Starting the Spotify daemon...'
 
@@ -23,7 +23,6 @@ if ! [[ "$initial_volume" =~ ^[0-9]+$ ]] || [ "$initial_volume" -lt 0 ] || [ "$i
     initial_volume=50
 fi
 options+=(--initial-volume "$initial_volume")
-
 
 # Device name
 name=$(bashio::config 'name')
