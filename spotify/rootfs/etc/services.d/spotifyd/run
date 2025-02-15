@@ -41,7 +41,7 @@ fi
 
 # Autoplay
 if bashio::config.true 'autoplay'; then
-  options+=(--autoplay)
+  options+=(--autoplay on)
 fi
 
 # Save writes
