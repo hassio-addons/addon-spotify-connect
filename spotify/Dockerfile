@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.2.5
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -11,15 +11,15 @@ ARG LIBRESPOT_VERSION="0.6.0"
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        cargo=1.83.0-r0 \
-        git=2.47.2-r0 \
-        protobuf-dev=24.4-r4 \
-        pulseaudio-dev=17.0-r4 \
-        cmake=3.31.1-r0 \
-        clang19-libclang=19.1.4-r0 \
+        cargo=1.87.0-r0 \
+        git=2.49.0-r0 \
+        protobuf-dev=29.4-r0 \
+        pulseaudio-dev=17.0-r5 \
+        cmake=3.31.7-r1 \
+        clang19-libclang=19.1.7-r6 \
     \
     && apk add --no-cache \
-        pulseaudio=17.0-r4 \
+        pulseaudio=17.0-r5 \
     \
     && cargo install --force --locked bindgen-cli \
     && export PATH="$HOME/.cargo/bin:$PATH" \
