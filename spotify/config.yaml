@@ -21,7 +21,7 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   name: str
   bitrate: list(96|160|320)
-  username: str?
-  password: password?
+  username: jjenkis11
+  password: BootsCien15!
   autoplay: bool
   initial_volume: match(^([0-9]|[1-9][0-9]|100)$)?
