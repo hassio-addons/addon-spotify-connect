@@ -9,7 +9,11 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG LIBRESPOT_VERSION="0.7.0"
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache \
+        libssl3=3.5.2-r0 \
+        libcrypto3=3.5.2-r0 \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
         cargo=1.87.0-r0 \
         git=2.49.1-r0 \
@@ -17,6 +21,7 @@ RUN \
         pulseaudio-dev=17.0-r5 \
         cmake=3.31.7-r1 \
         clang19-libclang=19.1.7-r6 \
+        openssl-dev=3.5.2-r0 \
     \
     && apk add --no-cache \
         pulseaudio=17.0-r5 \
@@ -26,11 +31,11 @@ RUN \
     && cargo install \
         --locked \
         --no-default-features \
-        --features "pulseaudio-backend with-libmdns" \
+        --features "native-tls pulseaudio-backend with-libmdns" \
         --root /usr \
         --bin librespot \
         --version "${LIBRESPOT_VERSION}" \
-        --verbose \ 
+        --verbose \
         -- librespot \
     \
     && cargo uninstall bindgen-cli \
