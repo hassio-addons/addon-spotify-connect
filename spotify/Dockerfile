@@ -26,7 +26,7 @@ RUN \
     && cargo install \
         --locked \
         --no-default-features \
-        --features "pulseaudio-backend with-libmdns" \
+        --features "pulseaudio-backend with-libmdns native-tls" \
         --root /usr \
         --bin librespot \
         --version "${LIBRESPOT_VERSION}" \
