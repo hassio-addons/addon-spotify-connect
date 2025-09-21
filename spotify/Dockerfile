@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.3.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.1.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -6,29 +6,39 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG LIBRESPOT_VERSION="0.4.2"
+ARG LIBRESPOT_VERSION="0.7.1"
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache \
+        libssl3=3.5.2-r0 \
+        libcrypto3=3.5.2-r0 \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        cargo=1.71.1-r0 \
-        git=2.40.3-r0 \
-        protobuf-dev=3.21.12-r2 \
-        pulseaudio-dev=16.1-r10 \
+        cargo=1.87.0-r0 \
+        git=2.49.1-r0 \
+        protobuf-dev=29.4-r0 \
+        pulseaudio-dev=17.0-r5 \
+        cmake=3.31.7-r1 \
+        clang19-libclang=19.1.7-r6 \
+        openssl-dev=3.5.2-r0 \
     \
     && apk add --no-cache \
-        pulseaudio=16.1-r10 \
+        pulseaudio=17.0-r5 \
     \
+    && cargo install --force --locked bindgen-cli \
+    && export PATH="$HOME/.cargo/bin:$PATH" \
     && cargo install \
         --locked \
         --no-default-features \
-        --features pulseaudio-backend \
+        --features "native-tls pulseaudio-backend with-libmdns" \
         --root /usr \
         --bin librespot \
         --version "${LIBRESPOT_VERSION}" \
-        --verbose \ 
+        --verbose \
         -- librespot \
     \
+    && cargo uninstall bindgen-cli \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
         /tmp/* \

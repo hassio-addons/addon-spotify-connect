@@ -8,11 +8,17 @@ declare bitrate
 declare name
 declare password
 declare username
+declare autoplay
+declare initial_volume
 
 bashio::log.info 'Starting the Spotify daemon...'
 
 # Bitrate
 options+=(--bitrate $(bashio::config 'bitrate'))
+
+# Initial Volume
+initial_volume=$(bashio::config 'initial_volume')
+options+=(--initial-volume "$initial_volume")
 
 # Device name
 name=$(bashio::config 'name')
@@ -27,6 +33,11 @@ if bashio::config.has_value 'username'; then
 
     options+=(--username "${username}")
     options+=(--password "${password}")
+fi
+
+# Autoplay
+if bashio::config.true 'autoplay'; then
+  options+=(--autoplay on)
 fi
 
 # Save writes
