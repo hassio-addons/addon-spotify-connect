@@ -8,17 +8,11 @@ declare bitrate
 declare name
 declare password
 declare username
-declare autoplay
-declare initial_volume
 
 bashio::log.info 'Starting the Spotify daemon...'
 
 # Bitrate
 options+=(--bitrate $(bashio::config 'bitrate'))
-
-# Initial Volume
-initial_volume=$(bashio::config 'initial_volume')
-options+=(--initial-volume "$initial_volume")
 
 # Device name
 name=$(bashio::config 'name')
@@ -35,11 +29,6 @@ if bashio::config.has_value 'username'; then
     options+=(--password "${password}")
 fi
 
-# Autoplay
-if bashio::config.true 'autoplay'; then
-  options+=(--autoplay on)
-fi
-
 # Save writes
 options+=(--disable-audio-cache)
 
@@ -47,6 +36,17 @@ options+=(--disable-audio-cache)
 if bashio::debug; then
   options+=(--verbose)
 fi
+
+# Onevent script
+options+=(--onevent /usr/bin/onevent)
+
+if bashio::config.has_value 'additional_cli_options'; then
+    additional_cli_options=$(bashio::config 'additional_cli_options')
+    options+=(${additional_cli_options})
+fi
+
+# temp fix permission
+chmod 755 /usr/bin/onevent
 
 # Run librespot
 exec librespot "${options[@]}"

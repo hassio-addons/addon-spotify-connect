@@ -1,0 +1,10 @@
+#!/bin/bash
+# ==============================================================================
+# DaAwesomeP Home Assistant Add-on: Spotify Connect Advanced
+# Onevent handler script
+# ==============================================================================
+
+curl -sS -X "POST" \
+    -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" \
+    --data-binary "{\"player_event\":\"${PLAYER_EVENT}\",\"old_track_id\":\"${OLD_TRACK_ID}\",\"track_id\":\"${TRACK_ID}\",\"duration_ms\":\"${DURATION_MS}\",\"position_ms\":\"${POSITION_MS}\",\"volume\":\"${VOLUME}\",\"sink_status\":\"${SINK_STATUS}\"}" \
+    "http://supervisor/core/api/events/spotify_advanced.event"

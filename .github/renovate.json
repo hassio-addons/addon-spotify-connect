@@ -5,10 +5,9 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "customManagers": [
+  "regexManagers": [
     {
-      "customType": "regex",
-      "managerFilePatterns": ["//Dockerfile$/", "//build.yaml$/"],
+      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -17,19 +16,17 @@
       "datasourceTemplate": "docker"
     },
     {
-      "customType": "regex",
-      "managerFilePatterns": ["//Dockerfile$/"],
+      "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_22/{{package}}"
+      "depNameTemplate": "alpine_3_18/{{package}}"
     },
     {
-      "customType": "regex",
-      "managerFilePatterns": ["//Dockerfile$/"],
+      "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG LIBRESPOT_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
