@@ -10,7 +10,7 @@ ARG LIBRESPOT_VERSION="0.7.1"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        libssl3=3.5.2-r0 \
+        libssl3=3.5.3-r0 \
         libcrypto3=3.5.2-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
