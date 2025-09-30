@@ -11,7 +11,7 @@ ARG LIBRESPOT_VERSION="0.7.1"
 RUN \
     apk add --no-cache \
         libssl3=3.5.3-r1 \
-        libcrypto3=3.5.3-r1 \
+        libcrypto3=3.5.4-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
