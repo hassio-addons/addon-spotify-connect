@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.1.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,8 +10,8 @@ ARG LIBRESPOT_VERSION="0.7.1"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        libssl3=3.5.2-r0 \
-        libcrypto3=3.5.2-r0 \
+        libssl3=3.5.4-r0 \
+        libcrypto3=3.5.4-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
@@ -21,7 +21,7 @@ RUN \
         pulseaudio-dev=17.0-r5 \
         cmake=3.31.7-r1 \
         clang19-libclang=19.1.7-r6 \
-        openssl-dev=3.5.2-r0 \
+        openssl-dev=3.5.4-r0 \
     \
     && apk add --no-cache \
         pulseaudio=17.0-r5 \
