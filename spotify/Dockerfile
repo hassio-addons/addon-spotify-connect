@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG LIBRESPOT_VERSION="0.7.1"
+ARG LIBRESPOT_VERSION="0.8.0"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
